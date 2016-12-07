@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MyPasswordImageSelector
 {
-    public partial class Form1 : Form
+    public partial class VMain : Form
     {
-        public Form1()
+        public VMain()
         {
             InitializeComponent();
         }
