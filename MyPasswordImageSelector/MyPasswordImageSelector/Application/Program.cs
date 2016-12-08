@@ -4,19 +4,21 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using MyPasswordImageSelector.Controller;
+using MyPasswordImageSelector.View;
+
 namespace MyPasswordImageSelector
 {
     static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
+
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new VMain());
+            VMain view = new VMain();
+            MainController controller = new MainController(view);
+            controller.Reshuffle();
+            view.ShowDialog();
         }
     }
 }
