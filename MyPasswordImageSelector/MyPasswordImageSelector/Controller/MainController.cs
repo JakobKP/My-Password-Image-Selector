@@ -27,7 +27,10 @@ namespace MyPasswordImageSelector.Controller
         public bool Validate(string Phrase1, string Phrase2)
         {
             if (Phrase1 == Phrase2)
+            {
+                //If phrases matches. Then search the user table for a match. If the user is found. Set the active user.  Return true
                 return true;
+            }
             return false;
         }
     }

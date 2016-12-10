@@ -18,6 +18,7 @@ namespace MyPasswordImageSelector.View
         public VMain()
         {
             InitializeComponent();
+            MessageBox.Show("Welcome to My Password Image Selector. Enter your master password to unlock. \n If this is your first time, create a new account, by selecting 4 images");
         }
 
         MainController _controller;
@@ -94,7 +95,11 @@ namespace MyPasswordImageSelector.View
                         MessageBox.Show("Phrase2 was: " + KeyPhrase2);
 
                         if (_controller.Validate(KeyPhrase1, KeyPhrase2))
+                        {
                             MessageBox.Show("System unlocked!");
+                            userToolStripMenuItem.Text = "User: Jakob";
+                            userToolStripMenuItem.Enabled = true;
+                        }
                         else
                             MessageBox.Show("Phrases was not identical!");
                     }
@@ -104,6 +109,11 @@ namespace MyPasswordImageSelector.View
                     }
                 }
             }
+        }
+
+        private void aboutToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("All rights Reserved: Jakob Klein Petersen 2016");
         }
     }
 }
