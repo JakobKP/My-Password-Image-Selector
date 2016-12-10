@@ -23,5 +23,12 @@ namespace MyPasswordImageSelector.Controller
         {
             _view.ReshuffleGrid(icons);
         }
+
+        public bool Validate(string Phrase1, string Phrase2)
+        {
+            if (Phrase1 == Phrase2)
+                return true;
+            return false;
+        }
     }
 }
