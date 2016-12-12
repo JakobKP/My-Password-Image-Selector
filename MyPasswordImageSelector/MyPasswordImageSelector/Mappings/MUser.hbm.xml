@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="MyPasswordImageSelector" namespace="MyPasswordImageSelector.Domain">
+  <class name="DUser">
+    <id name="Id"  >
+      <generator class="guid"/>
+    </id>
+    <property name="Username"/>
+    <property name="KeyPhrase1"/>
+    <property name="KeyPhrase2"/>  
+  </class>
+  
+
+
+</hibernate-mapping>
