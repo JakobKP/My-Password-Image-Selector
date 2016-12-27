@@ -30,7 +30,13 @@ namespace MyPasswordImageSelector.Repository
         public DUser GetByUsername(string username)
         {
             using (ISession session = NHibernateHelper.OpenSession())
-                return session.CreateCriteria(typeof(DUser)).Add(Restrictions.Eq("Name", username)).UniqueResult<DUser>();
+                return session.CreateCriteria(typeof(DUser)).Add(Restrictions.Eq("Username", username)).UniqueResult<DUser>();
+        }
+
+        public DUser GetByKeyPhrases(string phrase1, string phrase2)
+        {
+            using (ISession session = NHibernateHelper.OpenSession())
+                return session.CreateCriteria(typeof(DUser)).Add(Restrictions.Eq("KeyPhrase1", phrase1)).Add(Restrictions.Eq("KeyPhrase1", phrase2)).UniqueResult<DUser>();
         }
 
         public void Remove(DUser user)

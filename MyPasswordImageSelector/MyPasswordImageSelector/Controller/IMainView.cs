@@ -10,5 +10,6 @@ namespace MyPasswordImageSelector.Controller
     {
         void SetController(MainController controller);
         void ReshuffleGrid(List<string> icons);
+        void Unlock(Boolean userFound);
     }
 }

@@ -35,6 +35,12 @@ namespace MyPasswordImageSelector.View
             _controller.Reshuffle();
         }
 
+        public void Unlock(Boolean userFound)
+        {
+            userToolStripMenuItem.Text = "User: Jakob";
+            userToolStripMenuItem.Enabled = true;
+        }
+
         public void ReshuffleGrid(List<string> icons)
         {
             KeyCombinationLength = 0;
@@ -97,8 +103,6 @@ namespace MyPasswordImageSelector.View
                         if (_controller.Validate(KeyPhrase1, KeyPhrase2))
                         {
                             MessageBox.Show("System unlocked!");
-                            userToolStripMenuItem.Text = "User: Jakob";
-                            userToolStripMenuItem.Enabled = true;
                         }
                         else
                             MessageBox.Show("Phrases was not identical!");

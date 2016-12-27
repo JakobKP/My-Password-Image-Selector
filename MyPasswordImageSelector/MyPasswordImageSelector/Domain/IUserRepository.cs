@@ -13,5 +13,6 @@ namespace MyPasswordImageSelector.Domain
         void Remove(DUser user);
         DUser GetByIDd(Guid userId);
         DUser GetByUsername(string username);
+        DUser GetByKeyPhrases(string keyPhrase1, string keyPhrase2);
     }
 }
