@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using NHibernate.Cfg;
 using NHibernate;
 using MyPasswordImageSelector.Domain;
+using NHibernate.Cfg.MappingSchema;
+using NHibernate.Mapping.ByCode;
 
 namespace MyPasswordImageSelector.Repository
 {

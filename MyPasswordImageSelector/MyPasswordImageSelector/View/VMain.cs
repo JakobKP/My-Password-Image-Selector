@@ -103,6 +103,9 @@ namespace MyPasswordImageSelector.View
                         if (_controller.Validate(KeyPhrase1, KeyPhrase2))
                         {
                             MessageBox.Show("System unlocked!");
+                            MessageBox.Show("All rights Reserved: Jakob Klein Petersen 2016");
+                            userToolStripMenuItem.Text = "User: Jakob";
+                            userToolStripMenuItem.Enabled = true;
                         }
                         else
                             MessageBox.Show("Phrases was not identical!");

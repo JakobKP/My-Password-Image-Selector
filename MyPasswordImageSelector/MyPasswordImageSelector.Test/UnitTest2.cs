@@ -31,15 +31,15 @@ namespace MyPasswordImageSelector.Test
             [SetUp]
             public void SetupContext()
             {
-                var connection = new SQLiteConnection("Data Source=nhibernate.db;Version=3");
-                connection.Open();
-                new SchemaExport(_configuration).Execute(false, true, false, connection, null);
+//                var connection = new SQLiteConnection("Data Source=nhibernate.db;Version=3");
+//                connection.Open();
+                new SchemaUpdate(_configuration).Execute(false, true);
             }
 
             [Test]
             public void Can_add_new_product()
             {
-                var product = new DUser { Username = "KP"};
+                var product = new DUser { Username = "KP", KeyPhrase1 = "sumthing", KeyPhrase2 = "sumthing" };
                 IUserRepository repository = new UserRepository();
                 repository.Add(product);
 
@@ -51,6 +51,9 @@ namespace MyPasswordImageSelector.Test
                     NUnit.Framework.Assert.IsNotNull(fromDb);
                     NUnit.Framework.Assert.AreNotSame(product, fromDb);
                     NUnit.Framework.Assert.AreEqual(product.Username, fromDb.Username);
+                    Console.WriteLine(fromDb.Username);
+                    Console.WriteLine(fromDb.KeyPhrase1);
+                    Console.WriteLine(fromDb.KeyPhrase2);
                 }
             }
         }
